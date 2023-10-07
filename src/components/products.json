@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"Laptop",
+        "price":78000,
+        "description":"1TG HDD",
+        "brand":"LENOVO",
+        "rating":4.5
+    },
+    {
+        "id":2,
+        "name":"Laptop MINI",
+        "price":45000,
+        "description":"1TG HDD",
+        "brand":"LENOVO",
+        "rating":4.3
+    },
+    {
+        "id":3,
+        "name":"Headphone",
+        "price":6000,
+        "description":"HD Quality",
+        "brand":"SONY",
+        "rating":4.5
+    }
+]
