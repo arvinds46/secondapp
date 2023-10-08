@@ -17,6 +17,7 @@ function Navigation() {
             <Link to="/userlist" className='nav-link'>Show All Users</Link>
             <Link to="/todo" className='nav-link'>To Do App</Link>
             <Link to="/productlist" className='nav-link'>List of Products</Link>
+            <Link to="/weather" className='nav-link'>Weather</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

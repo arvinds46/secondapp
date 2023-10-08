@@ -1,21 +1,30 @@
-import React from 'react';
-import CounterButton from './counterButton';
+import React, { useState, useEffect } from 'react';
 
-function Counter(props) {
-    /*const [time, setTime] = useState(0);
+function Counter() {
+    const [count, setCount] = useState(0);
+    const increment = () => {
+        setInterval(()=>{
+            setCount(count => count + 1);
+        },1000);
+    }
+    const decrement = () => {
+        setInterval(()=>{
+            setCount(count => count - 1);
+        },1000);
+    }
     useEffect(() => {
         const timer = window.setInterval(() => {
-        setTime(time => time + 1);
+            setCount(count => count + 1);
         }, 1000);
         return () => {
         window.clearInterval(timer);
         };
-    }, []);*/
+    }, []);
 
     return (
-        <>
-        <CounterButton onClick={props.onIncrement} label="Increment" />
-        <CounterButton onClick={props.onDecrement} label="Decrement" />
+        <><div>Seconds: {count}</div>
+        <button className='btn btn-success' onClick={increment}>Increment</button>{' '}
+        <button className='btn btn-warning' onClick={decrement}>Decrement</button>
         </>
     );
 }
