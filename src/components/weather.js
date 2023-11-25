@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function OpenWeather() {
     const [city, setCity] = useState('delhi');
@@ -8,17 +8,14 @@ function OpenWeather() {
         setCity('');
     }
     const[weather, setWeather] = useState(null);
-    const getWeather = async () => {
+    (async () => {
         try {
             const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d6723d613308cde7e4391708839b62a5`);
             setWeather(resp.data);
         } catch (error) {
             console.log(error);
         }
-    }
-    useEffect(() => {
-        getWeather();
-    },[city]);
+    })();
     return ( <><h1>Current Weather</h1>
     <form onSubmit={handleSubmit}>
         <div className='form-group p-3'>
@@ -35,7 +32,7 @@ function OpenWeather() {
     </form>
     {weather &&  
     <ul className='list-group'>
-        <li className='list-group-item'><h2><img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />{weather.name} {weather.main.temp}°F</h2></li>
+        <li className='list-group-item'><h2><img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt='Icon' />{weather.name} {weather.main.temp}°F</h2></li>
         <li className='list-group-item'><h2>{weather.weather[0].main}</h2>{Date()}</li>
         <li className='list-group-item'>Wind {weather.wind.speed}km/h</li>
         <li className='list-group-item'>Cloudiness {weather.clouds.all}</li>

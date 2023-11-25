@@ -10,6 +10,9 @@ import UserList from './components/users/userList';
 import UserDetails from './components/users/userDetails';
 import Counter from './components/counter';
 import OpenWeather from './components/weather';
+import MyGrandParent from './components/contextlogic/mygrandparent';
+import CounterButton from './components/counterButton';
+import ItemList from './components/itemList';
 
 function App() {
   return (
@@ -21,9 +24,10 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/userlist' element={<UserList />}></Route>
-        <Route path='/todo' element={<><Counter /><ToDo /></>}></Route>
+        <Route path='/todo' element={<><Counter /><ToDo /><CounterButton /><ItemList /></>}></Route>
         <Route path='/productlist' element={<ProductList />}></Route>
         <Route path='/weather' element={<OpenWeather />}></Route>
+        <Route path='/contextlogic' element={<MyGrandParent />}></Route>
         <Route path='/userdetails/:id' element={<UserDetails />}></Route>
       </Routes>
     </div>
